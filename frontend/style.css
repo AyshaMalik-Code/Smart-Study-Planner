@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  color: white;
+}
+
+.sidebar p {
+  margin: 15px 0;
+}
+
+.sidebar p:hover {
+  background: rgba(255,255,255,0.2);
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  color: white;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
+.form input, .form select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+}

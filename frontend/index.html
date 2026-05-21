@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Study Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>📚 Planner</h2>
+
+    <p onclick="showSection('dashboard')">🏠 Dashboard</p>
+    <p onclick="showSection('tasks')">📋 Tasks</p>
+    <p onclick="showSection('ai')">🤖 AI Planner</p>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- DASHBOARD -->
+    <div id="dashboardSection">
+
+      <h1>Smart Study Planner</h1>
+
+      <div class="stats">
+        <div class="card">
+          <h2 id="totalTasks">0</h2>
+          <p>Total Tasks</p>
+        </div>
+
+        <div class="card">
+          <h2 id="completedTasks">0</h2>
+          <p>Completed</p>
+        </div>
+
+        <div class="card">
+          <h2 id="pendingTasks">0</h2>
+          <p>Pending</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Progress</h2>
+        <div id="progressBox"></div>
+      </div>
+
+    </div>
+
+    <!-- TASKS -->
+    <div id="tasksSection" style="display:none;">
+
+      <div class="card form">
+        <h2>Add New Task</h2>
+
+        <input id="title" placeholder="Task Title">
+        <input id="subject" placeholder="Subject">
+
+        <select id="priority">
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+
+        <input id="time" type="time">
+
+        <button onclick="addPlan()">Add Task</button>
+      </div>
+
+      <input id="search" placeholder="Search..." onkeyup="searchPlan()">
+
+      <div id="plans"></div>
+
+    </div>
+
+    <!-- AI -->
+    <div id="aiSection" style="display:none;">
+      <h2>🤖 AI Daily Planner</h2>
+      <button onclick="generateAI()">Generate AI Plan</button>
+      <div id="aiOutput"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
