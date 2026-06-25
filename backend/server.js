@@ -8,22 +8,29 @@ app.use(cors());
 app.use(express.json());
 
 // ================= DB CONNECT =================
-mongoose.connect(
-  "mongodb://Anjali:Anjali1234@ac-jqemwpb-shard-00-00.epnjwxw.mongodb.net:27017,ac-jqemwpb-shard-00-01.epnjwxw.mongodb.net:27017,ac-jqemwpb-shard-00-02.epnjwxw.mongodb.net:27017/smart-study?ssl=true&replicaSet=atlas-iukm9z-shard-0&authSource=admin&retryWrites=true&w=majority"
-)
-.then(() => console.log("✅ DB Connected"))
-.catch(err => console.log("❌ DB Error:", err));
+
+mongoose
+  .connect(
+    "mongodb+srv://ay_malik:2908290929082909@cluster0.prgsiok.mongodb.net/smart-study?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("✅ DB Connected"))
+  .catch((err) => console.log("❌ DB Error:", err));
 
 // ================= ROUTES =================
+
 const planRoutes = require("./routes/planRoutes");
 app.use("/api/plans", planRoutes);
 
-// ================= TEST =================
+// ================= TEST ROUTE =================
+
 app.get("/", (req, res) => {
   res.send("API Working ✅");
 });
 
 // ================= START SERVER =================
-app.listen(5000, () => {
-  console.log("🚀 Server running on http://localhost:5000");
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
