@@ -1,6 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 
@@ -10,9 +13,7 @@ app.use(express.json());
 // ================= DB CONNECT =================
 
 mongoose
-  .connect(
-    "mongodb+srv://ay_malik:2908290929082909@cluster0.prgsiok.mongodb.net/smart-study?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("✅ DB Connected"))
   .catch((err) => console.log("❌ DB Error:", err));
 
@@ -24,7 +25,7 @@ app.use("/api/plans", planRoutes);
 // ================= TEST ROUTE =================
 
 app.get("/", (req, res) => {
-  res.send("API Working ✅");
+  res.send("Smart Study Planner API Working ✅");
 });
 
 // ================= START SERVER =================

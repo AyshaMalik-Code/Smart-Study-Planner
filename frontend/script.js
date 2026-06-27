@@ -1,4 +1,4 @@
-const API = "https://smart-study-planner-zh3l.onrender.com/api/plans";
+const API = "http://localhost:5001/api/plans";
 let plansData = [];
 
 // LOAD
